@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)https://getbootstrap.com/docs/4.1/examples/starter-template/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="GSOC TL-Verilog Generic library project ">
+    <meta name="author" content="Ahmed Salman">
+
+    <title>GOSC2018 || Ahmed Salman</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Ahmed Salman &nbsp;&nbsp;&nbsp;&nbsp; Google Summer of Code &nbsp;&nbsp;&nbsp;&nbsp; TL-Verilog Generic library project</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+
+      </div>
+    </nav>
+
+    <main role="main" class="container" >
+
+   <h1>My experience with GSOC</h1>   
+      
+
+    </main><!-- /.container -->
+   <p class="lead" style=" padding-left : 1rem;"><ol class="list-group">
+               
+                <li class="list-group-item"><br>
+
+                    <h3>Work done in GOSC </h3>
+                    <ol>
+                      <li>Finished Upating the generic library of tl-verilog available  here <a href="https://github.com/stevehoover/tlv_flow_lib"> https://github.com/stevehoover/tlv_flow_lib</a> and my work was through updatig_syntax branch which is merged now </li>
+                      <li>Make a library of tl-verilog wrappers for the macros that xilinx provide to  utilize the hardware effecintly available  here <a href="https://github.com/stevehoover/tlv_flow_lib"> https://github.com/stevehoover/tlv_flow_lib</a> and my work was through xilinx_macros branch which is merged now</li>
+                      <LI>Co-authoring a paper with my mentor on the work done through google summer of code under the title<em style=" color:  blue;">  "Transaction-Level Design is a Reality"</em></LI>
+                      <li>Characterize and optimize the physical implementation of WARP-V with different configurations vs. other RISC-V cores. And this task detail will be discussed later </li>
+                      <li>The last task that I worked on was to Integrate WARP-V into the Ariane infrastructure. By Performing a lobotomy of Ariane to replace the core with WARP-V. Get simulation working and regressions passing. but this task is not done yet but i intend to work on it stay working on it after google summer of code ends because it still needs alot of work</li>
+                    </ol>
+                </li>
+
+                  <li class="list-group-item"><br>
+
+                    <h3>What i learned at GSOC </h3>
+                    <ol>
+                      <li>My first experience working on bleeding-edge technology was beneficial in all sides
+working on great projects with a great mentor <em style=" color:  blue;">@Steve Hoover</em>, Updating the library
+syntax of an emerging language extension to System Verilog Transaction-Level
+Verilog (TL-Verilog).</li>
+                      <li>Updating a library containing FIFOs, arbitars,synchronous elastic flow pipeline, etc.  and updating a flow example demonstrating the power of TL-Verilog creating complex designs with just a few lines of code.</li>
+                      <LI>Learned <a href="http://www.gnu.org/software/m4/m4.html">GNU M4 </a> macro processor Language because  it's used to define macros inside the library </LI>
+                      <li>Learned RISC-V architecture and many implementations like WRAP-V, ARIANE ,PICORV32 and more. </li>
+                    </ol>
+                </li>
+
+  <li class="list-group-item">
+                  <h3>How it all Started</h3>
+                  
+                  <p>
+                       My young brother how is two years younger than me and is in the same college and department as U told me about his 
+                       friend how joined GSOC before, so I went to the website  found lots of amazing projects but not  many related to hardware design.<br>
+                       Until I came across <em style=" color:  blue;">FOSSi</em> which had a lot of amazing projects that it was a challenge to choose among them what project to work on untill i talked to <em style=" color:  blue;">steeve </em>and really believed in the project and the impact it will have on the industry and on my career.</p>
+</li>
+                <li class="list-group-item">
+                    <h3>Challenges I faced</h3>
+                     <ol>
+                       <li>There aren't many resources for studying M4 so I had to rely mostly on its documentation and that was a challenge without seeing many code examples and so on jumping into coding</li>
+                        <li>Working on bleeding-edge technology, Lack of full documentation was a challenge, but
+with <em style=" color:  blue;">@Steve</em> being always there for mentoring and guidance I was able to work through
+this challenge</li>
+                     </ol> 
+                </li>
+                                <li class="list-group-item">
+                                  <h3> Jump into the code </h3>
+                    <p>Transaction-Level Verilog (TL-Verilog) is an emerging language extension to System Verilog, Has the ability to define flexible reusable components. For this project, will develop a library of compatible components such as FIFOs, queues, arbiters, elastic buffers, etc. that could form the basis of a new era of hardware design,And will demonstrate the ease of composing these components into sophisticated transaction flows and quickly implementing what are currently considered to be complex designs, such as a complete on-chip network!</p>
+                 <p>This big design with Verilog Takes a huge number of line but using Tl-Verilog  the code is less than a hundred line  </p>
+                    <img src="1.png" >
+                    <p>The library is very generic for example in this line just changing the last cycle will automatically generate a stall pipeline de different depth and you can although  change the hierarchy the same way  </p>
+                    <img src="2.png">
+                </li>
+                <li class="list-group-item">
+                  <h3>Wrapped Xilinx macros</h3>
+                   <p> TL-Verilog interface for Xilinx important modules and macros to make sure to  utilize the hardware as good as possible not just focuse on making coding simpler and easier.
+                    <br>
+                    For example, in this code, we are initializing  128bit block ram on Xilinx FPGA and that's the interface for it </p>
+                    <img src="13.png">
+                    <p>and it can be instantiated as simple like that </p>
+
+                    <img src="4.png">
+                    <p>The library contains rams, FIFO and all the dsp macros provided by xilinx wrapped using TL-Verilog</p>
+
+                </li>
+
+
+                <li class="list-group-item">
+                  <h3>physical implementation of WARP-V </h3>
+                   <p>Characterizing  and optimizing the physical implementation of WARP-V with different configurations vs. other RISC-V cores. we achived very good result and clock speed comparable to the new RISC-V cores like Picorv32 
+                    <h4>5-stages wrap-v physical implementation</h4>
+                    <br>
+                    <div>
+<table style="width: 800px; margin-left: auto; margin-right: auto;" border="solid" cellpadding="7">
+<tbody>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Family </span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">Device</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">LUTs</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">Maximum frequency</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Kintex </span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xc7k480tiffv1156-2L</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">206</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">454MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Kintex &nbsp;ultrascale+</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xcku15p-ffve1760-1LV-i </span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">206</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">523MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Virtex UltraScale+</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xcvu3p-ffvc1517-3-e</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">203</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">685MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Virtex UltraScale+</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xcvu3p-ffvc1517-2-e</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">202</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">658MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Kintex UltraScale+</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xcku3p-ffva676-3-e</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">203</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">717MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Kintex UltraScale+</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xcku3p-ffva676-2-e</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">201</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">629MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Virtex UltraScale</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xcvu065-ffvc1517-3-e</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">207</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">563MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Virtex UltraScale</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xcvu065-ffvc1517-2-e</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">207</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">572MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Kintex UltraScale</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xcku035-fbva676-3-e</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">203</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">584MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Kintex UltraScale</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xcku035-fbva676-2-e</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">210</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">513MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;"> Virtex-7T</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xc7v585t-ffg1761-3</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">206</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">490MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Virtex-7T</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xc7v585t-ffg1761-2</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">206</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">456MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Kintex-7T</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xc7k70t-fbg676-3</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">205</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">507MHZ</span></p>
+</td>
+</tr>
+<tr style="height: 31px;">
+<td style="width: 136.5px; height: 31px;">
+<p><span style="font-weight: 400;">Kintex-7T</span></p>
+</td>
+<td style="width: 178.5px; height: 31px;">
+<p><span style="font-weight: 400;">xc7k70t-fbg676-2</span></p>
+</td>
+<td style="width: 72px; height: 31px;">
+<p><span style="font-weight: 400;">205</span></p>
+</td>
+<td style="width: 100px; height: 31px;">
+<p><span style="font-weight: 400;">478MHZ</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</br>
+
+
+<h4>No pipeline Wrap-V Configuration</h4></br>
+
+<div>
+<table style="width: 800px; margin-left: auto; margin-right: auto;" border="solid" cellpadding="7">
+<tbody>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Family</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Device</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">luts</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Maximum frequency </span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Kintex </span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">xc7k480tiffv1156-2L</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">789</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">238MHZ`</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Kintex &nbsp;ultrascale+</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">xcku15p-ffve1760-1LV-i </span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">1108</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">239MHZ</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Kintex UltraScale+</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">xcku3p-ffva676-3-e</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">1101</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">282MHZ</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</br>
+<h4>7 Stages Wrap-V configuration </h4></br>
+
+<div>
+<table style="width: 800px; margin-left: auto; margin-right: auto;" border="solid" cellpadding="7">
+<tbody>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Family</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">device</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">luts</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">Maximum Frequency</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Kintex UltraScale+</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">xcku3p-ffva676-3-e</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">167</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">526MHZ</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Kintex UltraScale</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">xcku035-fbva676-2-e</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">171</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">515MHZ</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Kintex </span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">xc7k480tiffv1156-2L</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">169</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">492MHZ</span></p>
+</td>
+</tr>
+</tbody>
+</table></div></li>
+            <li class="list-group-item">
+                                  <h3> Integrating Wrap-v into ariane </h3>
+                    <p>Inorder to test wrap-v preformance we started integrating it into  the ariane cpu so we can compare the preforamnce of the ariane core before and after replacing the core with the wrap-v core and use the functionalities in ariane cpu and tools that ariane cpu is interfaced with but i havnot finished this task it so i will still be working on it after google summer of code ends</p>
+                
+                </li>
+            </ol></p>
+
+<!--
+                <li class="list-group-item">
+                  <h3>MakerChip</h3>
+                   <p>MakerChip is a great tool to use the power of TL-Verilog it helps to visualize and simulate the work using Diagrams and waves it has several examples of great things you can do with TL-Verilog with nearly no effort.</p>
+
+                    <img src="5.png" style="  float: left; width: 49.5%;padding: 7px;height: 300px;">                  
+                    <img src="6.png" style="  float: left; width: 49.5%;padding: 5px; height: 320px;">
+                        </li> -->
+            </ol></p>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./index_files/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="./index_files/popper.min.js.download"></script>
+    <script src="./index_files/bootstrap.min.js.download"></script>
+  
+
+</body></html>
